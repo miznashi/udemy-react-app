@@ -1,35 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 
-//component
-function App() {
-  const profiles = [
-    {name: "Taro",   age: 15},
-    {name: "Hanako", age: 5},
-    {name: "Noname"}
-  ]
-  return (
-    <React.Fragment>
-    {
-      profiles.map((profiles, index) => {
-        return <User name={profiles.name} age={profiles.age} key={index} />
-      })
-    }
-    </React.Fragment>
-  );
+//
+const App = () => (<Counter></Counter>)
+
+//class component
+class Counter extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = { count: 0 }
+  }
+
+  handlePlusButton = () => {
+    this.setState({count: this.state.count + 1})
+  }
+  handleMinusButton = () => {
+    this.setState({count: this.state.count - 1})
+  }
+
+  render(){
+    return(
+      <React.Fragment>
+        <div>count: {this.state.count}</div>
+        <button onClick= {this.handlePlusButton}>+1</button>
+        <button onClick= {this.handleMinusButton}>-1</button>
+      </React.Fragment>
+    )
+  }
+
 }
 
-//props
-const User = (props) => {
-  return <div>Hi, I am {props.name}, and {props.age} years old!</div>
-}
-
-//型チェック
-User.propTypes = {
-  name: PropTypes.string,
-  age : PropTypes.number.isRequired
-  //isRequired ( [age] が存在しいないといけない場合)
-  //今回の場合 [name:"Noname"] に [age] が設定されていない為、コンソールにエラーがでる
-}
 
 export default App;
