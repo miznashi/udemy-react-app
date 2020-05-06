@@ -6,7 +6,7 @@ function App() {
   const profiles = [
     {name: "Taro",   age: 15},
     {name: "Hanako", age: 5},
-    {name: "Noname"}// 数値が入っていたらエラー
+    {name: "Noname"}
   ]
   return (
     <React.Fragment>
