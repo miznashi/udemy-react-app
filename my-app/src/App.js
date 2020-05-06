@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-function App() {
+/* function App() {
   return (
     <React.Fragment>
       <h1>Hello World!</h1>
@@ -11,6 +11,21 @@ function App() {
       />
     </React.Fragment>
   );
+} */
+
+class App extends Component {
+  render(){
+  return (
+    <React.Fragment>
+      <h1>te Hello World!</h1>
+      <label htmlFor="bar">bar</label>
+      <input
+        type="text"
+        onChange={() => {console.log("test change text")}}
+      />
+    </React.Fragment>
+    )
+  }
 }
 
 export default App;
