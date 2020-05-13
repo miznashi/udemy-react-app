@@ -1,14 +1,9 @@
-// events_index をコピーしたファイル
-// ※必要じゃないものはコメントアウトしている
-
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-// import _ from 'lodash'
 import { Link } from 'react-router-dom'
 import {Field, reduxForm} from 'redux-form'
 
 //関数のインポート (acctions/index.js)
-// import { readEvents } from '../actions';
 import { postEvent } from '../actions';
 
 //class component
